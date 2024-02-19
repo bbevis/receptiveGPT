@@ -15,17 +15,11 @@ openai.api_key = OPENAI_API_KEY
 def chat_gpt(prompt):
     response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "user", "content": prompt},
+                  {"role": "system", "content": "You are a the Queen of England"}]
     )
     return response.choices[0].message.content
 
 if __name__ == "__main__":
-    response = chat_gpt("write a very short love poem about two lovers worlds apart")
+    response = chat_gpt("write a very short political manifesto")
     print(response)
-    
-    # while True:
-    #     user_input = input("You: ")
-    #     if user_input.lower() in ["quit", "exit", "bye"]:
-    #         break
-    #     response = chat_gpt(user_input)
-    #     print("Bot:", response)
