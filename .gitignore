@@ -5,7 +5,7 @@ __pycache__/
 
 # Ignore API_KEY
 API_KEY
-
+config.py
 # C extensions
 *.so
 
