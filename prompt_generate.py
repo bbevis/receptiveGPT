@@ -14,7 +14,11 @@ opposing_view = "template opposing view"
 
 writer_statement = "template write statement"
 
-prompt = Instructions + "For reference, the topic is: " + topic + "The writer is responding to an opposing view online. The opposing view is: " + opposing_view +\
+def get_prompt():
+    prompt = Instructions + "For reference, the topic is: " + topic + "The writer is responding to an opposing view online. The opposing view is: " + opposing_view +\
     " The writer's response to that opposing view is: " + writer_statement
+    return prompt
     
-print(prompt)
+if __name__ == "__main__":
+    print(get_prompt())
+

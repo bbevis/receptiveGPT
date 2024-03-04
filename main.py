@@ -22,6 +22,6 @@ def chat_gpt(prompt, context):
     return response.choices[0].message.content
 
 if __name__ == "__main__":
-    response = chat_gpt(prompt = "write a very short political manifesto where you believe in going to war with Persia as a unified Greek state",
-                        context = "You are a King Leonidas, King of Sparta")
+    response = chat_gpt(prompt = pg.get_prompt(),
+                        context = "You are a helpful writing assistant")
     print(response)
