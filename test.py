@@ -7,8 +7,6 @@ import prompt_generate as pg
 df = pd.read_csv('edit2Braw.csv')
 
 df = df[['issuetext', 'seedtext', 'message1']].dropna().sample(100)
-# print(df)
-
 
 suggestions_baseline = []
 suggestions_recipe = []
