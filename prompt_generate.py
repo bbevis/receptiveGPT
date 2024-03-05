@@ -1,5 +1,5 @@
 
-baseline_instructions = "Imagine you are a helpful writing assistant being asked to rephrase a statement for a writer who wants to appear more receptive to the other person."
+baseline_instructions = "Rewrite a statement for a writer who wants to appear more receptive to other people's views."
 
 recipe_instructions = "Specifically, change the style of the writer’s statement such that the writer acknowledges the other perspective, \
 does not appear argumentative, entrenched or condescending, frames their arguments positively, \
