@@ -22,6 +22,9 @@ def chat_gpt(prompt, context):
     return response.choices[0].message.content
 
 if __name__ == "__main__":
-    response = chat_gpt(prompt = pg.get_prompt(),
+    topic = "The US should introdce stronger regulations on guns. For example, automatic rifles should be banned."
+    opposing_view = "It's our second amendment rights! We can't let these liberals take away our guns!"
+    writer_statement = "Evidence from around the world suggests gun regulations work. Read a book you idiot!"
+    response = chat_gpt(prompt = pg.get_prompt("words", writer_statement, opposing_view, topic),
                         context = "You are a helpful writing assistant")
     print(response)
