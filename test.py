@@ -4,7 +4,7 @@ import numpy as np
 import main
 import prompt_generate as pg
 
-df = pd.read_csv('edit2Braw.csv')
+df = pd.read_csv('edit2B_gptTest.csv')
 
 df = df[['issuetext', 'seedtext', 'message1']].dropna().sample(20)
 
