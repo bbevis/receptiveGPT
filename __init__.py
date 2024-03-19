@@ -1,2 +1,2 @@
-import prompt_generate
-import main
+import prompt
+import api

@@ -3,7 +3,7 @@ import requests
 import json
 import os
 import config
-import prompt_generate as pg
+import prompt as pg
 
 OPENAI_API_KEY = config.api_key
 
@@ -25,6 +25,11 @@ if __name__ == "__main__":
     topic = "The US should introdce stronger regulations on guns. For example, automatic rifles should be banned."
     opposing_view = "It's our second amendment rights! We can't let these liberals take away our guns!"
     writer_statement = "Evidence from around the world suggests gun regulations work. Read a book you idiot!"
-    response = chat_gpt(prompt = pg.get_prompt("words", writer_statement, opposing_view, topic),
+    prompt = pg.get_prompt("recipe", writer_statement, opposing_view, topic)
+    response = chat_gpt(prompt = prompt,
                         context = "You are a helpful writing assistant")
+    
+    print('')
+    print(prompt)
+    print('')
     print(response)
