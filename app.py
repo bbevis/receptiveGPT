@@ -5,30 +5,33 @@ import pandas as pd
 import numpy as np
 import api
 import prompt as pg
+import json
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 # limit files sizes to 16 MBs. Flask will raise a RequestEntityTooLarge exception.
-app.secret_key = '514609ea9026b3956660d714'
+app.secret_key = '514609' # this is just a random number
 
 #--- ROUTES ---#
-@app.route('/')
-def home():
-	return render_template('index.html')
  
-@app.route('/paraphrase', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def paraphrase():
     
-    topic = "The US should introdce stronger regulations on guns. For example, automatic rifles should be banned."
-    opposing_view = "It's our second amendment rights! We can't let these liberals take away our guns!"
+    topic = "The United States should invest greater economic, military, and human resources in helping Ukraine fight Russia."
+    opposing_view = "I do not think that the US should invest more into their military. The US already have the largest budget in NATO by far, and it is not our war."
     
-    writer_statement = request.form['text']
+    # writer_statement = request.form['text']
+    writer_statement = request.args.get('text', None)
     
-    prompt = pg.get_prompt("recipe", writer_statement, opposing_view, topic)
+    prompt = pg.get_prompt("baseline", writer_statement, opposing_view, topic)
     response = api.chat_gpt(prompt = prompt,
                         context = "You are a helpful writing assistant")
     
-    flash(response)
-    return redirect('/')
+    jsondata = json.dumps(
+        {
+            "suggestion": response
+        })
+    
+    return jsondata
 
 if __name__ == "__main__":
 	app.run(debug=True)
