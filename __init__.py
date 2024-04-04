@@ -1,3 +1,3 @@
 import prompt
 import api
-import app
+import main
