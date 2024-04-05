@@ -24,7 +24,7 @@ def paraphrase():
     
     prompt = pg.get_prompt("baseline", writer_statement, opposing_view, topic)
     response = api.chat_gpt(prompt = prompt,
-                        context = "You are a helpful writing assistant")
+                        context = "You are a human writer attepting to discuss a controversial issue with someone with an opposing view")
     
     jsondata = json.dumps(
         {
