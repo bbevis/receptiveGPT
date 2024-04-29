@@ -17,7 +17,7 @@ app.secret_key = '514609' # this is just a random number
 def paraphrase():
     
     topic = "The United States should invest greater economic, military, and human resources in helping Ukraine fight Russia."
-    opposing_view = "I do not think that the US should invest more into their military. The US already have the largest budget in NATO by far, and it is not our war."
+    opposing_view = "I do not think that the US should invest more into their military. They already have the largest budget in NATO by far. There is no evidence to suggest that more investment leads to a higher likelihood of peace. In fact, it's likely to lead to more conflict in my opinion. It is best to stay out of other people’s war."
     
     # writer_statement = request.form['text']
     writer_statement = request.args.get('text', None)
