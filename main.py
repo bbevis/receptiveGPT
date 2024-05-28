@@ -30,7 +30,7 @@ def paraphrase():
     
     jsondata = json.dumps(
         {
-            "suggestion": response
+            "response": response
         })
     
     return jsondata
