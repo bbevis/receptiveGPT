@@ -1,9 +1,9 @@
 
 baseline_instructions = "Rewrite a statement to appear more receptive to other people's views."
 
-recipe_instructions = "Specifically, change the style of the writer’s statement such that the writer acknowledges the other perspective, \
-does not appear argumentative, entrenched or condescending, frames their arguments positively, \
-avoids contradicting other people’s beliefs, and highlights any areas of agreement with the other person."
+recipe_instructions = """Specifically, change the style of the writer’s statement such that the writer acknowledges the other perspective, 
+does not appear argumentative, entrenched or condescending, frames their arguments positively, 
+avoids contradicting other people’s beliefs, and highlights any areas of agreement with the other person."""
 
 word_restrictions = "Use the same number of words the writer used in the writer's statement."
 
@@ -22,6 +22,6 @@ def get_prompt(prompt_type, writer_statement, opposing_view, topic):
     return prompt
     
 if __name__ == "__main__":
-    print(get_prompt())
+    print(get_prompt("baseline", ))
 
 

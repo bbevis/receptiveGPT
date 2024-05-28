@@ -16,8 +16,10 @@ app.secret_key = '514609' # this is just a random number
 @app.route('/', methods=['GET','POST'])
 def paraphrase():
     
-    topic = "The United States should invest greater economic, military, and human resources in helping Ukraine fight Russia."
-    opposing_view = "I do not think that the US should invest more into their military. They already have the largest budget in NATO by far. There is no evidence to suggest that more investment leads to a higher likelihood of peace. In fact, it's likely to lead to more conflict in my opinion. It is best to stay out of other people’s war."
+    topic = "Hamas bears a lot of responsibility for the current conflict than the Israeli government"
+    opposing_view = """Hamas is the real problem, not Israel. Hamas's terrorism, rocket attacks, and use of human shields drive the conflict.
+    Their relentless violence and refusal to recognize Israel’s right to exist perpetuate the bloodshed.
+    Blaming Israel ignores the reality of Hamas's aggression and extremism."""
     
     # writer_statement = request.form['text']
     writer_statement = request.args.get('text', None)
