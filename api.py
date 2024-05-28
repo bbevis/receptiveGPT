@@ -22,11 +22,13 @@ def chat_gpt(prompt, context):
     return response.choices[0].message.content
 
 if __name__ == "__main__":
-    topic = "The United States should invest greater economic, military, and human resources in helping Ukraine fight Russia."
-    opposing_view = "I do not think that the US should invest more into their military. They already have the largest budget in NATO by far. There is no evidence to suggest that more investment leads to a higher likelihood of peace. In fact, it's likely to lead to more conflict in my opinion. It is best to stay out of other people’s war."
-    writer_statement = "we should always those in need. It is the role of the US!"
+    topic = "Hamas bears a lot of responsibility for the current conflict than the Israeli government"
+    opposing_view = """Hamas is the real problem, not Israel. Hamas's terrorism, rocket attacks, and use of human shields drive the conflict.
+    Their relentless violence and refusal to recognize Israel’s right to exist perpetuate the bloodshed.
+    Blaming Israel ignores the reality of Hamas's aggression and extremism."""
+    writer_statement = "we should always help everyone"
 
-    prompt = pg.get_prompt("recipe", writer_statement, opposing_view, topic)
+    prompt = pg.get_prompt("baseline", writer_statement, opposing_view, topic)
     response = chat_gpt(prompt = prompt,
                         context = "You are a human writer attepting to discuss a controversial issue with someone with an opposing view")
     
