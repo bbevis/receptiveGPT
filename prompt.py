@@ -10,8 +10,10 @@ word_restrictions = "Use the same number of words the writer used in the writer'
 def get_prompt(prompt_type, writer_statement, opposing_view, topic):
     
     if prompt_type == "baseline":
-        prompt = baseline_instructions + "For reference, the topic is: " + topic + "You are responding to an opposing view online. The opposing view is: " + opposing_view +\
-        " Your response to that opposing view is: " + writer_statement
+        prompt = baseline_instructions + " The statement is: " + writer_statement
+    # if prompt_type == "baseline":
+    #     prompt = baseline_instructions + "For reference, the topic is: " + topic + "You are responding to an opposing view online. The opposing view is: " + opposing_view +\
+    #     " Your response to that opposing view is: " + writer_statement
     elif prompt_type == "recipe":
         prompt = baseline_instructions + recipe_instructions + "For reference, the topic is: " + topic + "You are responding to an opposing view online. The opposing view is: " + opposing_view +\
         " Your response to that opposing view is: " + writer_statement
