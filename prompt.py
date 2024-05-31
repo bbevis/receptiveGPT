@@ -7,7 +7,7 @@ avoids contradicting other people’s beliefs, and highlights any areas of agree
 
 word_restrictions = "Use the same number of words the writer used in the writer's statement."
 
-def get_prompt(prompt_type, writer_statement, opposing_view, topic):
+def get_prompt(prompt_type, writer_statement):
     
     if prompt_type == "baseline":
         prompt = baseline_instructions + " The statement is: " + writer_statement
